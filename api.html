@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+<title>API - AMTV</title>
+</head>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://worldtimeapi.org/api/timezone/Europe/Warsaw', false); 
+    xhr.send();
+    if (xhr.status != 200) {
+        console.log(xhr.status + ': ' + xhr.statusText);
+        let errorstatus = xhr.status
+        let errorstatusstatustext = xhr.statusText
+        document.write("\u{7b}\n\u{20}\u{20}\u{20}\u{22}\u{45}\u{72}\u{72}\u{6f}\u{72}\u{22}\u{3a}\u{20}\u{7b}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{53}\u{74}\u{61}\u{74}\u{75}\u{73}\u{22}\u{3a}\u{20}\u{22}" + errorstatus + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{53}\u{74}\u{61}\u{74}\u{75}\u{73}\u{54}\u{65}\u{78}\u{74}\u{22}\u{3a}\u{20}\u{22}" + errorstatusstatustext + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{7d}\u{2c}\n\u{7d}")
+    } else {
+        let xhrreponse = xhr.responseText;
+        let datetime = JSON.parse(xhrreponse).datetime;
+        let dateparse = datetime.substr(0, 10);
+        let datecor1 = dateparse.replace('-', '');
+        let datecor2 = datecor1.replace('-', '');
+        let date = datecor2 + '.mp4';
+        let time = datetime.substr(11, 8);
+        document.write("\u{7b}\n\u{20}\u{20}\u{20}\u{22}\u{4d}\u{61}\u{69}\u{6e}\u{49}\u{6e}\u{66}\u{6f}\u{22}\u{3a}\u{20}\u{7b}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{54}\u{69}\u{6d}\u{65}\u{22}\u{3a}\u{20}\u{22}" + date + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{54}\u{69}\u{6d}\u{65}\u{22}\u{3a}\u{20}\u{22}" + time + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{7d}\u{2c}\n\u{20}\u{20}\u{20}\u{22}\u{41}\u{64}\u{64}\u{49}\u{6e}\u{66}\u{6f}\u{22}\u{3a}\u{20}\u{7b}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{44}\u{61}\u{74}\u{65}\u{54}\u{69}\u{6d}\u{65}\u{22}\u{3a}\u{20}\u{22}" + datetime + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{20}\u{22}\u{44}\u{61}\u{74}\u{65}\u{50}\u{61}\u{72}\u{73}\u{65}\u{22}\u{3a}\u{20}\u{22}" + dateparse + "\u{22}\u{2c}\n\u{9}\u{22}\u{44}\u{61}\u{74}\u{65}\u{43}\u{6f}\u{72}\u{31}\u{22}\u{3a}\u{20}\u{22}" + datecor1 + "\u{22}\u{2c}\n\u{9}\u{22}\u{44}\u{61}\u{74}\u{65}\u{43}\u{6f}\u{72}\u{32}\u{22}\u{3a}\u{20}\u{22}" + datecor2 + "\u{22}\u{2c}\n\u{9}\u{22}\u{44}\u{61}\u{74}\u{65}\u{22}\u{3a}\u{20}\u{22}" + date + "\u{22}\u{2c}\n\u{9}\u{22}\u{54}\u{69}\u{6d}\u{65}\u{22}\u{3a}\u{20}\u{22}" + time + "\u{22}\u{2c}\n\u{20}\u{20}\u{20}\u{7d}\u{2c}\n\u{7d}");
+    }
+</script>
